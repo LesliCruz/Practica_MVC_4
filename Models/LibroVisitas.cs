@@ -16,5 +16,13 @@ namespace Practica_MVC_4.Models
             archivo.WriteLine("Nombre:" + nombre + "<br>Comentarios:" + comentarios + "<hr>");
             archivo.Close();
         }
+
+        public string Leer()
+        {
+            StreamReader archivo = new StreamReader(HostingEnvironment.MapPath("~") + "/App_Data/datos.txt");
+            string todo = archivo.ReadToEnd();
+            archivo.Close();
+            return todo;
+        }
     }
 }
